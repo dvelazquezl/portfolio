@@ -1,8 +1,6 @@
 ---
-import Button from "../components/button.astro";
 import Projects from "../components/home/projects.astro";
 import Separator from "../components/home/separator.astro";
-import Writings from "../components/home/writings.astro";
 import Layout from "../layouts/main.astro";
 ---
 
@@ -15,12 +13,12 @@ import Layout from "../layouts/main.astro";
         <h1
           class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white"
         >
-          Hello, I'm Kai.
+          Hello, I'm Daniel.
         </h1>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          I'm a front-end programmer living in Nanjing. <br
+          I'm a Software Engineering living in Obligado - Paraguay. <br
             class="hidden lg:block"
-          />I focus on Web development.
+          />I focus on Web and Mobile development.
         </p>
         <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
           I can help you out with:
@@ -28,13 +26,24 @@ import Layout from "../layouts/main.astro";
         <ul
           class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"
         >
-          <li>Vue.js Development</li>
           <li>React.js Development</li>
+          <li>React Native Development</li>
+          <li>NextJs Development</li>
+          <li>Vue.js Development</li>
           <li>Node.js Development</li>
-          <li>Website Design</li>
           <li>and more...</li>
         </ul>
-        <Button text="Follow me on 𝕏" link="https://twitter.com/0xKaiBi" />
+        <a
+          href="https://www.linkedin.com/in/danielvelazquezl/"
+          class="inline-flex w-auto px-4 py-2 gap-2 mt-5 font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
+        >
+          <span class="text-sm">Let's connect</span>
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 50 50">
+            <path
+              d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
+            ></path>
+          </svg>
+        </a>
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
@@ -52,12 +61,12 @@ import Layout from "../layouts/main.astro";
               >
             </span>
           </div>
-          <div class="relative z-30 px-10">
+          <div class="relative z-30 px-2">
             <img
-              src="/assets/images/photo.png"
+              src="/assets/images/profile.png"
               loading="eager"
               decoding="auto"
-              class="relative z-30 w-full aspect-[790/1189] md:max-w-md mx-auto dark:-translate-y-0.5"
+              class="relative z-30 w-full aspect-auto md:max-w-md mx-auto pb-2 dark:-translate-y-0.5"
             />
           </div>
           <div
@@ -71,6 +80,4 @@ import Layout from "../layouts/main.astro";
 
   <Separator text="Check out my projects" />
   <Projects />
-  <Separator text="Some of my writing" />
-  <Writings />
 </Layout>
