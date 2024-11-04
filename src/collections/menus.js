@@ -4,10 +4,6 @@ export const menus = [
     url: "/",
   },
   {
-    name: "Projects",
-    url: "/projects",
-  },
-  {
     name: "About",
     url: "/about",
   },
