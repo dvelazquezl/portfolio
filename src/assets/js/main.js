@@ -23,15 +23,18 @@ systemTheme.addEventListener("change", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   headerElement = document.getElementById("header");
+  const localStorageSetting = localStorage.getItem("dark_mode");
 
-  if (
-    localStorage.getItem("dark_mode") &&
-    localStorage.getItem("dark_mode") === "true"
-  ) {
+  if (localStorageSetting === "true") {
     showNight();
-  } else {
+  } else if (localStorageSetting === "false") {
     showDay();
+  } else {
+    const isSystemDark = systemTheme.matches;
+    localStorage.setItem("dark_mode", isSystemDark);
+    isSystemDark ? showNight() : showDay();
   }
+
   stickyHeaderFuncionality();
   applyMenuItemClasses();
   evaluateHeaderPosition();
@@ -95,8 +98,9 @@ function showDay(animate) {
     document.getElementById("moon").classList.add("hidden");
     document.getElementById("sun").classList.remove("hidden");
 
+    document.documentElement.classList.remove("dark");
+
     if (animate) {
-      document.documentElement.classList.remove("dark");
       document.getElementById("sun").classList.add("rising");
     }
   }, timeout);
@@ -121,8 +125,9 @@ function showNight(animate) {
     document.getElementById("sun").classList.add("hidden");
     document.getElementById("moon").classList.remove("hidden");
 
+    document.documentElement.classList.add("dark");
+
     if (animate) {
-      document.documentElement.classList.add("dark");
       document.getElementById("moon").classList.add("rising");
     }
   }, timeout);
