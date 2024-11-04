@@ -1,7 +1,3 @@
-// Add your javascript here
-
-window.darkMode = false;
-
 const stickyClasses = ["fixed", "h-14"];
 const unstickyClasses = ["absolute", "h-20"];
 const stickyClassesContainer = [
@@ -13,6 +9,17 @@ const stickyClassesContainer = [
 ];
 const unstickyClassesContainer = ["border-transparent"];
 let headerElement = null;
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+systemTheme.addEventListener("change", () => {
+  if (systemTheme.matches) {
+    localStorage.setItem("dark_mode", true);
+    showNight(true);
+  } else {
+    localStorage.setItem("dark_mode", false);
+    showDay(true);
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   headerElement = document.getElementById("header");
@@ -21,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.getItem("dark_mode") &&
     localStorage.getItem("dark_mode") === "true"
   ) {
-    window.darkMode = true;
     showNight();
   } else {
     showDay();
@@ -31,17 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   evaluateHeaderPosition();
   mobileMenuFunctionality();
 });
-
-// window.toggleDarkMode = function(){
-//     document.documentElement.classList.toggle('dark');
-//     if(document.documentElement.classList.contains('dark')){
-//         localStorage.setItem('dark_mode', true);
-//         window.darkMode = true;
-//     } else {
-//         window.darkMode = false;
-//         localStorage.setItem('dark_mode', false);
-//     }
-// }
 
 window.stickyHeaderFuncionality = () => {
   window.addEventListener("scroll", () => {
@@ -73,7 +68,7 @@ document.getElementById("darkToggle").addEventListener("click", () => {
   document.documentElement.classList.add("duration-300");
 
   if (document.documentElement.classList.contains("dark")) {
-    localStorage.removeItem("dark_mode");
+    localStorage.setItem("dark_mode", false);
     showDay(true);
   } else {
     localStorage.setItem("dark_mode", true);
@@ -140,7 +135,6 @@ window.applyMenuItemClasses = () => {
       menuItems[i].classList.add("text-neutral-900", "dark:text-white");
     }
   }
-  //:class="{ 'text-neutral-900 dark:text-white': window.location.pathname == '{menu.url}', 'text-neutral-700 dark:text-neutral-400': window.location.pathname != '{menu.url}' }"
 };
 
 function mobileMenuFunctionality() {
