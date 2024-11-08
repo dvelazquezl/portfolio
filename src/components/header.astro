@@ -1,8 +1,10 @@
 ---
-import HeaderItem from "./HeaderItem.astro";
 import Logo from "./Logo.astro";
+import HeaderItem from "./HeaderItem.astro";
+import ThemeSwitch from "./ThemeSwitch.astro";
+
 const menuItems = [
-  { text: "Home", label: "home", href: "#" },
+  { text: "Home", label: "home", href: "/#" },
   { text: "Experience", label: "experience", href: "#experience" },
   { text: "About", label: "about", href: "#about" },
 ];
@@ -13,7 +15,7 @@ const menuItems = [
     class="flex items-center justify-between h-full max-w-5xl mx-auto pl-6 pr-4 border-x border-t-0 border-b rounded-b-lg border-neutral-300/50 bg-white/80 dark:border-neutral-600/40 dark:bg-neutral-900/60 backdrop-blur-lg shadow-md"
   >
     <Logo />
-    <nav>
+    <nav class="flex items-center">
       {
         menuItems.map((item) => (
           <HeaderItem href={item.href} label={item.label}>
@@ -21,6 +23,7 @@ const menuItems = [
           </HeaderItem>
         ))
       }
+      <ThemeSwitch />
     </nav>
   </div>
 </header>
