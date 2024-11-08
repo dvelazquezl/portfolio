@@ -10,7 +10,7 @@ const themes = ["System", "Light", "Dark"];
   <button
     transition:persist
     id="theme-toggle-btn"
-    class="appareance-none border-none flex hover:scale-125 transition"
+    class="appareance-none border-none flex hover:scale-125 transition text-neutral-500 dark:text-neutral-400"
   >
     <span class="sr-only">Choose a theme</span>
     <IMac id="system" class="size-6 theme-toggle-icon" />
@@ -34,7 +34,7 @@ const themes = ["System", "Light", "Dark"];
 </div>
 
 <style>
-  #themes-menu.open {;
+  #themes-menu.open {
     display: inline;
     animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
@@ -83,7 +83,6 @@ const themes = ["System", "Light", "Dark"];
     };
 
     const themePreference = getThemePreference();
-    console.log("themePreference", themePreference);
     const isDark =
       themePreference === "dark" ||
       (themePreference === "system" && matchMedia.matches);
