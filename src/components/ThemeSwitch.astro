@@ -100,4 +100,6 @@ const themes = ["System", "Light", "Dark"];
       updateTheme();
     });
   });
+
+  document.addEventListener("astro:after-swap", updateTheme);
 </script>
