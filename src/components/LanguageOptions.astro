@@ -2,13 +2,41 @@
 import Language from "@/components/icons/Language.astro";
 ---
 
-<div
-  transition:persist
-  class="flex gap-2 ml-4 text-neutral-500 dark:text-neutral-400"
->
-  <Language class="size-6" />
-  <a href="/" class="transition hover:text-neutral-900 dark:hover:text-white"> English </a>
-  <a href="/es" class="transition hover:text-neutral-900 dark:hover:text-white">
+<div class="flex gap-2 ml-4">
+  <Language class="size-6 text-neutral-500 dark:text-neutral-400" />
+  <a
+    id="en"
+    href="/"
+    class="transition text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+  >
+    English
+  </a>
+  <a
+    id="es"
+    href="/es"
+    class="transition text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+  >
     Español
   </a>
 </div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const currentLanguage = document.documentElement.lang;
+    const options = {
+      en: document.getElementById("en"),
+      es: document.getElementById("es"),
+    };
+    const classListToRemove = ["text-neutral-500", "dark:text-neutral-400"];
+    const classListToAdd = ["text-neutral-900", "dark:text-white"];
+
+    function updateLanguageOption(option) {
+      option.classList.remove(...classListToRemove);
+      option.classList.add(...classListToAdd);
+    }
+
+    if (options[currentLanguage]) {
+      updateLanguageOption(options[currentLanguage]);
+    }
+  });
+</script>
