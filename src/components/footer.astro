@@ -4,6 +4,7 @@ import Linkedin from "./icons/Linkedin.astro";
 import Github from "./icons/Github.astro";
 import Instagram from "./icons/Instagram.astro";
 import ThemeSwitch from "./ThemeSwitch.astro";
+import LanguageOptions from "./LanguageOptions.astro";
 ---
 
 <div
@@ -29,7 +30,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       <a
         href="https://www.linkedin.com/in/danielvelazquezl/"
         target="_blank"
-        class="hover:text-neutral-900 dark:hover:text-white"
+        class="transition hover:text-neutral-900 dark:hover:text-white"
       >
         <span class="sr-only">Linkedin</span>
         <Linkedin class="size-6" />
@@ -38,7 +39,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       <a
         href="https://github.com/dvelazquezl"
         target="_blank"
-        class="hover:text-neutral-900 dark:hover:text-white"
+        class="transition hover:text-neutral-900 dark:hover:text-white"
       >
         <span class="sr-only">GitHub</span>
         <Github class="size-6" />
@@ -47,12 +48,15 @@ import ThemeSwitch from "./ThemeSwitch.astro";
       <a
         href="https://instagram.com/danielvelazquezl"
         target="_blank"
-        class="hover:text-neutral-900 dark:hover:text-white"
+        class="transition hover:text-neutral-900 dark:hover:text-white"
       >
         <span class="sr-only">Instagram</span>
         <Instagram class="size-6" />
       </a>
     </div>
-    <ThemeSwitch />
+    <div class="flex">
+      <ThemeSwitch />
+      <LanguageOptions />
+    </div>
   </div>
 </div>

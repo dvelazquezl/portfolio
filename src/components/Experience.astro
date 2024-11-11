@@ -1,21 +1,23 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import ExperienceItem from "./ExperienceItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const experiences: Array<Experience> = [
   {
-    dates: "March 2021 · Present",
-    role: "Front-end Engineer",
-    company: "10 Grounds",
-    description:
-      "Working as a contractor helping the team maintain, design and develop new features for a social media app that is used by thousands of people.",
+    role: t("experience.jobs.frontend.role"),
+    company: t("experience.jobs.frontend.company"),
+    dates: t("experience.jobs.frontend.dates"),
+    description: t("experience.jobs.frontend.description"),
     logo: "/images/experiences/10g.webp",
   },
   {
-    dates: "March 2020 · December 2020",
-    role: "Web Developer",
-    company: "Universidad Nacional de Itapúa",
-    description:
-      "Worked as an Internship. Developed a new version of a File Management System for specific documents.",
+    role: t("experience.jobs.web.role"),
+    company: t("experience.jobs.web.company"),
+    dates: t("experience.jobs.web.dates"),
+    description: t("experience.jobs.web.description"),
     logo: "/images/experiences/uni.webp",
   },
 ];
