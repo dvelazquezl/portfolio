@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 ---
 
 <div class="flex flex-col space-y-6">
-  <div class="flex items-center gap-4">
+  <div class="flex flex-col sm:flex-row items-center gap-4">
     <Image
       loading="eager"
       src="/images/profile.webp"
@@ -24,12 +24,14 @@ const t = useTranslations(lang);
       {t("hero.title")}
     </h1>
   </div>
-  <p class="mb-6 text-lg font-semibold text-neutral-600 dark:text-neutral-400">
+  <p
+    class="mb-6 text-center sm:text-left text-lg font-semibold text-neutral-600 dark:text-neutral-400"
+  >
     {t("hero.subtitle1")}
     <br class="hidden lg:block" />
     {t("hero.subtitle2")}
   </p>
-  <div class="flex space-x-4">
+  <div class="flex justify-center sm:justify-start space-x-4">
     <a
       href="mailto:danielvelazquez.dev@gmail.com"
       class="inline-flex items-center px-2 py-1 gap-2 font-semibold duration-300 ease-out border rounded-lg bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
