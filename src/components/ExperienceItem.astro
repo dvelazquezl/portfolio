@@ -11,10 +11,10 @@ const { logo, dates, role, company, description } = Astro.props;
 ---
 
 <div
-  class="flex gap-x-4 ml-6 pb-8 border-l border-gray-200 dark:border-neutral-700"
+  class="flex gap-x-4 ml-0 sm:ml-6 pb-8 border-0 sm:border-l border-gray-200 dark:border-neutral-700"
 >
   <div
-    class="flex items-center justify-center -translate-x-1/2 rounded-full w-14 h-14 aspect-square bg-white border dark:bg-neutral-950 border-neutral-300 dark:border-neutral-700"
+    class="hidden sm:flex items-center justify-center -translate-x-1/2 rounded-full w-14 h-14 aspect-square bg-white border dark:bg-neutral-950 border-neutral-300 dark:border-neutral-700"
   >
     <img src={logo} alt={company} class="w-8 h-8" />
   </div>
