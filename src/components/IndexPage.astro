@@ -1,0 +1,38 @@
+---
+import SectionContainer from "@/components/SectionContainer.astro";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Experience from "@/components/Experience.astro";
+import About from "@/components/About.astro";
+import IMacCode from "@/components/icons/IMacCode.astro";
+import User from "@/components/icons/User.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("layout.title")} description={t("layout.description")}>
+  <main class="container max-w-4xl mx-auto mt-24">
+    <div class="flex flex-col gap-y-24">
+      <SectionContainer id="home">
+        <Hero />
+      </SectionContainer>
+      <SectionContainer id="experience">
+        <SectionTitle>
+          <IMacCode class="w-10 h-10" />
+          {t("experience.title")}
+        </SectionTitle>
+        <Experience />
+      </SectionContainer>
+      <SectionContainer id="about">
+        <SectionTitle>
+          <User class="w-10 h-10" />
+          {t("about.title")}
+        </SectionTitle>
+        <About />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>

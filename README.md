@@ -1,7 +1,7 @@
 # Personal portfolio
-Small website to showcase my basic information, experiences and projects. This project was build with [Astro]((https://astro.build)) using the [Aria Template](#template).
+Small website to showcase my basic information, experiences and projects. This project was build with [Astro]((https://astro.build)) using the [Aria Template](https://github.com/ccbikai/astro-aria) as a start point.
 
-## <a id="template"></a>Aria Template
+## Aria Template
 
 This is a personal blog, portfolio, or blog template created for Astro, by [Ccbikai](https://github.com/ccbikai).
 

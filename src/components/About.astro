@@ -1,0 +1,23 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Image from "astro/components/Image.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="flex">
+  <p
+    class="text-md leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8"
+  >
+    {t("about.description")}
+  </p>
+  <Image
+    src="/images/about.webp"
+    alt="about"
+    loading="eager"
+    width="240"
+    height="240"
+    class="w-60 aspect-auto rounded-xl rotate-6 mt-8 mx-8 ring-4 ring-neutral-200"
+  />
+</div>
